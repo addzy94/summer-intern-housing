@@ -33,9 +33,9 @@ app.use(cookieParser());
 app.use(express.json());
 
 // Middleware (Routes)
-app.use("/auth", authRoute);
-app.use("/users", userRoute);
-app.use("/apartments", apartmentRoute);
+app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
+app.use("/api/apartments", apartmentRoute);
 
 // Middleware (Error Handling)
 app.use((err, req, res, next) => {

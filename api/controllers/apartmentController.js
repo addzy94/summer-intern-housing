@@ -53,9 +53,25 @@ export const getApartment = async (req, res, next) => {
 
 export const getAllApartments = async (req, res, next) => {
 
+    console.log("I'm hitting this.");
+
     try {
         const apartments = await Apartment.find();
         res.status(200).json(apartments);
+    }
+    catch (error) {
+        return next(error);
+    }
+}
+
+export const getApartmentsByCity = async (req, res, next) => {
+
+    const cities = req.query.cities.split(",");
+    try {
+        const citiesList = await Promise.all(cities.map(city => {
+            return Apartment.countDocuments({city: city});
+        }));
+        res.status(200).json(citiesList);
     }
     catch (error) {
         return next(error);
