@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const ApartmentSchema = new mongoose.Schema( {
-
+ 
     name: {
         type: String,
         require: true
