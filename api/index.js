@@ -51,6 +51,7 @@ app.use((err, req, res, next) => {
     });
 });
 
-app.listen(8800, () => {
+const PORT = 8800;
+app.listen(PORT, () => {
     connect();
 });
