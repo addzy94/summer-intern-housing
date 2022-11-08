@@ -9,7 +9,9 @@ export const updateUser = async (req, res, next) => {
             { new: true }
         );
 
-        res.status(200).json(updatedUser);
+        const { password, ...otherDetails } = updatedUser._doc;
+
+        res.status(200).json({ ...otherDetails });
     }
     catch (error) {
         return next(error);

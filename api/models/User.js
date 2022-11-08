@@ -20,11 +20,6 @@ const UserSchema = new mongoose.Schema(
             require: true,
         },
 
-        isAdmin: {
-            type: Boolean,
-            default: false
-        },
-
         apartmentsOwned: [{ type: Schema.Types.ObjectId, ref: 'Apartment' }]
     },
 

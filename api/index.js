@@ -10,7 +10,7 @@ import apartmentRoute from "./routes/apartments.js";
 const app = express();
 dotenv.config();
 
-// Connect to DB - Function
+// Connect to database function
 const connect = async() => {
     try {
         await mongoose.connect(process.env.MONGO);
@@ -51,7 +51,9 @@ app.use((err, req, res, next) => {
     });
 });
 
+// Define the port and add the server
 const PORT = 8800;
+
 app.listen(PORT, () => {
     connect();
 });

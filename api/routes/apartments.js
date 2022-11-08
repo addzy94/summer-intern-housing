@@ -7,18 +7,16 @@ import { createApartment,
          updateApartment, 
          getApartmentsByCity } from "../controllers/apartmentController.js";
 
-import { verifyAdmin } from "../utils/verifyToken.js";
-
 const router = express.Router();
 
 // Create Apartment Listing
-router.post("/", verifyAdmin, createApartment);
+router.post("/", createApartment);
 
 // Update Apartment Listing
-router.put("/:id", verifyAdmin, updateApartment);
+router.put("/:id", updateApartment);
 
 // Delete Apartment Listing
-router.delete("/:id", verifyAdmin, deleteApartment);
+router.delete("/:id", deleteApartment);
 
 // Get Apartment Listing based on ID
 router.get("find/:id", getApartment);
