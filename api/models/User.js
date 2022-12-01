@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema(
         apartmentsOwned: [{ type: Schema.Types.ObjectId, ref: 'Apartment' }]
     },
 
-    {timestamps: true}
+    { timestamps: true }
 );
 
 export default mongoose.model("User", UserSchema);
